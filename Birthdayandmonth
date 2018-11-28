@@ -3,6 +3,9 @@ public class Matchingtool{
     System.out.println("Please enter your birthday");
     int a = TextIO.getlnInt();
     System.out.println("Please enter your birth month");
-    String b = TextIO.Word();
+    string b = TextIO.Word();
+    System.out.println("Please enter the other's birthday");
+    int c = TextIO.getlnInt();
+    System.out.println("Please enter the other's birthmonth");
   }
 }

@@ -27,5 +27,7 @@ public class MatchingCelebrity{
 
         Human myself = new Human();
         String answer = Process.get(myself);
+        System.out.println(answer + " is your best match");
+
     }
 }

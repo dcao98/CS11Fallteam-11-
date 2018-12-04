@@ -1,25 +1,21 @@
-public class Human{
+public class People{
 
     String name ;
     String favoriteFood;
     String starSign;
-    String hobbies;
-    String favoriteMusic;
-    String age;
-    String height;
+    String hobby;
     String sex;
+    String birthMonth;
 
-    String[] character = new String[]{name,favoritefood,starSign,hobbies,favoriteFood,age,height,sex};
+    String[] character = new String[]{name,favoriteFood,starSign,hobby,sex,birthMonth};
 
-    Human(String a,String b, String c, String d, String e,String f,String j,String s){
-        favoriteFood = a;
-        starSign = b;
-        hobbies = c;
-        favoriteMusic = d;
-        age= e;
-        height = f;
-        name = g;
-        sex = s;
+    People(String name,String favoriteFood, String starSign, String hobby, String sex,String birthMonth){
+        this.name = name;
+        this.favoriteFood = favoriteFood;
+        this.starSign = starSign;
+        this.hobby = hobby;
+        this.sex = sex;
+        this.birthMonth = birthMonth;
     }
 
 }

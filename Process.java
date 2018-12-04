@@ -1,4 +1,4 @@
-public Class Process{
+public class Process{
 
     People Ellen = new People("Ellen","chinese food","aquarius","singing","female", "january");
     People RebelWilson = new People("Rebel Wilson", "korean food"，"pisces", "dancing", "female","february");

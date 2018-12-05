@@ -1,0 +1,147 @@
+/**
+Authors @ George Li, Danni Cao, Qingtian Mei, Sarah Shin, Dennis Kim
+Project Purpose: A program that will print out your celebrity match and a recommended restuarant to go have your first date!
+*/
+
+import java.util.Scanner;
+
+public class Cinder{
+    //stores celebrity information
+    static String[] Ellen = new String[]{"Ellen","chinese food","aquarius","singing", "january","female"};
+    static String[] RebelWilson = new String[]{"Rebel Wilson", "korean food","pisces", "dancing","february","female"};
+    static String[] LadyGaga = new String[]{"Lady Gaga", "fast food", "aries","singing","march","female"};
+    static String[] KristenStewart = new String[]{"Kristen Steward", "japanese food", "aries", "acting","april","female"};
+    static String[] Adele = new String[]{"Adele", "fast food", "taurus", "singing", "may","female"};
+    static String[] ArianaGrande = new String[]{"Ariana Grande", "italian food", "cancer", "singing", "june","female"};
+    static String[] SelenaGomez = new String[]{"Selena Gomez", "italian food", "leo", "singing","july","female"};
+    static String[] BlakeLively = new String[]{"Blake Lively","korean food","virgo", "acting","august","female"};
+    static String[] Beyonce = new String[]{"Beyonce","chinese food", "virgo", "singing", "september","female"};
+    static String[] DakotaJohnson = new String[]{"Dakota Johnson", "american food","libra","acting","october","female"};
+    static String[] EmmaStone = new String[]{"Emma Stone","american food","scorpio","acting","november","female"};
+    static String[] NickiMinaj = new String[]{"Nicki Minaj","japanese food","sagittarius","singing","december","female"};
+
+    static String[] BradPitt = new String[]{"Brad Pitt","italian food","capricorn","acting","december","male"};
+    static String[] BradleyCooper = new String[]{"Brady Cooper","italian food","capricorn","dancing","january","male"};
+    static String[] TomHiddleston = new String[]{"Tom Hiddleston", "chinese food","aquarius","singing","february","male"};;
+    static String[] JustinBiber = new String[]{"Justin Biber","fast food","pisces","acting","march","male"};
+    static String[] RobertDowneyJr = new String[]{"Robert Downey Jr.", "japanese food","aries","dancing","april","male"};
+    static String[] DwayneJohnson = new String[]{"Dwayne Johnson","american food","taurus","singing","may","male"};
+    static String[] KanyeWest = new String[]{"Kanye West","japanese food","cancer","acting","june","male"};
+    static String[] BenedictCumberbatch = new String[]{"Benedict Cumberbatch","chinese food","gemini","acting","july","male"};
+    static String[] AndrewGarfield = new String[]{"Andrew Garfield","korean food","leo","singing","august","male"};
+    static String[] WillSmith = new String[] {"Will Smith","fast food","libra","acting","september","male"};
+    static String[] RyanGosling = new String[]{"Ryan Gosling","korean food","scorpio","dancing","october","male"};
+    static String[] LeonardoDicaprio = new String[]{"Leonardo Dicaprio","american food","scorpio","singing","november","male"};
+
+    //makes two collection of multidimensional array with Celebrity information
+    public static String[][] femaleCollection = new String[][]{NickiMinaj,EmmaStone,DakotaJohnson,Beyonce,BlakeLively,SelenaGomez,ArianaGrande,Adele,KristenStewart,LadyGaga,RebelWilson,Ellen};
+    public static String[][] maleCollection = new String[][]{BradPitt,LeonardoDicaprio,RyanGosling,WillSmith,AndrewGarfield,BenedictCumberbatch,KanyeWest,DwayneJohnson,RobertDowneyJr,JustinBiber,TomHiddleston,BradleyCooper};
+
+
+    public static void main(String[]args){
+        System.out.println("Hello! Are you excited to find your perfect celebrity match?");
+        System.out.println("We only need a few information about you and then we will reveal the big secret!! Ready?! First, what is your name?");
+        Scanner console = new Scanner(System.in);
+        String name = new String(console.nextLine());
+        System.out.printf("Ok, now a few more things... What is your favorite food? You have following choices below: %n[fast food, chinese food, korean food, japanese food, italian food, american food]%n");
+        String favoriteFood = new String(console.nextLine());
+        System.out.printf("What is your horoscope? Here are your choices (we give you the dates in case you don’t know your horoscope): %naquarius(Jan 20 - Feb 18) %npisces(Feb 19 - Mar 20) %naries(Mar 21 - Apr 19) %ntaurus(Apr 20 - May 20) %ngemini(May 21 - Jun 20) %ncancer(Jun 21 - Jul 22) %nleo(Jul - Aug 22) %nvirgo(Aug 23 - Sept 22) %nlibra(Sept 23 - Oct 22) %nscorpio(Oct 23 - Nov 21) %nsagittarius(Nov 22 - Dec 21) %ncapricorn(Dec 22 - Jan 19)%n");
+        String horoscope = new String(console.nextLine());
+        System.out.printf("What would you like to do when you are alone... %na. singing, b. dancing, c.acting... %nyou have to pick one!! No judging here!!%n");
+        String hobby = new String(console.nextLine());
+        System.out.println("Do you perfer a male celebrity or a female celebrity?");
+        String gender = new String(console.nextLine());
+        System.out.printf("Ok, one last thing... you are so close to find your perfect match! %nWhat is your birth month again?%n");
+        String birthMonth= new String(console.nextLine());
+
+        String[] myself = new String[]{name,favoriteFood,horoscope,hobby,birthMonth,gender};
+        String answer = get(myself);
+        System.out.println(answer + " is your best match");
+        recommendation(favoriteFood,answer);
+    }
+    //the algorithm to determine which celebrity you match with 
+    public static String get(String[]myself){
+
+        int count = 0;
+        int temp = 0;
+        String[] male = WillSmith;
+        String[] female = NickiMinaj;
+
+        if(myself[5].equals("male")){
+          for(int i = 0;i<maleCollection.length-1;i++){
+              int length = maleCollection[i].length;
+              String[] character = maleCollection[i];
+
+              for(int j = 0;j<length;j++){
+                  if(myself[j] .equals(character[j])){
+                      count = count+1;
+                  }
+              }
+              if(count>temp){
+                  temp = count;
+                  male = maleCollection[i];
+              }
+                  count = 0;
+          }
+          return male[0];
+        }
+        else{
+          for(int i = 0;i<femaleCollection.length-1;i++){
+              int length = femaleCollection[i].length;
+              String[] character = femaleCollection[i];
+
+              for(int j = 0;j<length;j++){
+                  if(myself[j] .equals(character[j])){
+                      count = count+1;
+                  }
+              }
+              if(count>temp){
+                  temp = count;
+                  female = femaleCollection[i];
+              }
+                  count = 0;
+          }
+          return female[0];
+        }
+    }
+    //restaurant recommendation method
+    public static void recommendation(String a, String b){
+
+         if (a.equals( "korean food")){
+           System.out.println("Since you and " +b+ " both like Korean food,");
+           System.out.println("We recommend you guys to go to:");
+           System.out.println("1. Woori");
+           System.out.println("2. Kaju Tofu House");
+           System.out.println("3. Kimchipapi Kitchen");
+       } else if (a.equals("chinese food")){
+           System.out.println("Since you and " +b+ " both like Chinese food,");
+           System.out.println("We recommend you guys to go to: ");
+           System.out.println("1. Asia Wok");
+           System.out.println("2. Mulan Taiwanese Restaurant");
+           System.out.println("3. Jin's Sichuan House");
+       } else if (a.equals( "american food")){
+           System.out.println("Since you and " +b+ " both like American food,");
+           System.out.println("We recommend you guys to go to: ");
+           System.out.println("1. Bistro 781");
+           System.out.println("2. The Gaff");
+           System.out.println("3. Brewer's Tap & Table");
+       } else if (a.equals("italian food")){
+           System.out.println("Since you and " +b+ " both like Italian food,");
+           System.out.println("We recommend you guys to go to: ");
+           System.out.println("1. Fiorella's");
+           System.out.println("2. Charcoal Guido's");
+           System.out.println("3. Osteria Posto");
+       } else if (a.equals( "fast food")){
+           System.out.println("Since you and " +b+ " both like Fast food,");
+           System.out.println("We recommend you guys to go to: ");
+           System.out.println("1. Five Guys");
+           System.out.println("2. McDonalds");
+           System.out.println("3. Wendy's");
+         } else {
+           System.out.println("Since you and " +b+ " both like Japanese food,");
+           System.out.println("We recommend you guys to go to: ");
+           System.out.println("1. Hakata Ramen & Sushi");
+           System.out.println("2. UMI fine Japanese & Asian Cuisine");
+         }
+       }
+}

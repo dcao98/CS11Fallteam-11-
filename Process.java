@@ -1,7 +1,7 @@
 public class Process{
 
     People Ellen = new People("Ellen","chinese food","aquarius","singing","female", "january");
-    People RebelWilson = new People("Rebel Wilson", "korean food"，"pisces", "dancing", "female","february");
+    People RebelWilson = new People("Rebel Wilson", "korean food","pisces", "dancing", "female","february");
     People LadyGaga = new People("Lady Gaga", "fast food", "aries","singing","female","march");
     People KristenStewart = new People("Kristen Steward", "japanese food", "aries", "acting","female","april");
     People Adele = new People("Adele", "fast food", "taurus", "singing", "female", "may");
@@ -14,7 +14,7 @@ public class Process{
     People NickiMinaj = new People("Nicki Minaj","japanese food","sagittarius","singing","female","december");
 
     People BradleyCooper = new People("Brady Cooper","italian food","capricorn","dancing","male","january");
-    People TomHiddleston = new People("Tom Hiddleston", "chinese food","aquarius","singing","male","february");;
+    People TomHiddleston = new People("Tom Hiddleston", "chinese food","aquarius","singing","male","february");
     People JustinBiber = new People("Justin Biber","fast food","pisces","acting","male","march");
     People RobertDowneyJr = new People("Robert Downey Jr.", "japanese food","aries","dancing","male","april:");
     People DwayneJohnson = new People("Dwayne Johnson","american food","taurus","singing","male","may");

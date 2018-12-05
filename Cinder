@@ -1,6 +1,6 @@
 /**
 Authors @ George Li, Danni Cao, Qingtian Mei, Sarah Shin, Dennis Kim
-Project Purpose: A program that will print out your celebrity match and a recommended restuarant to go have your first date!
+Project Purpose: A program that will print out your celebrity match and a recommended restaurant to go have your first date!
 */
 
 import java.util.Scanner;

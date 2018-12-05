@@ -38,7 +38,6 @@ public class Recommendation{
         System.out.println("We recommend you guys to go to: ");
         System.out.println("1. Hakata Ramen & Sushi");
         System.out.println("2. UMI fine Japanese & Asian Cuisine");
-        //make it simple with only three recommendations
       }
   }
 }
